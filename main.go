@@ -5,6 +5,7 @@ import (
 	"net"
 	"os"
 	"sort"
+	"time"
 
 	"github.com/akamensky/argparse"
 )
@@ -24,6 +25,7 @@ func worker(ip string, ports, results chan int) {
 
 func main() {
 	var portcap int
+	startTime := time.Now()
 
 	parser := argparse.NewParser("globe", "port scanner")
 
@@ -42,8 +44,9 @@ func main() {
 	}
 
 	fmt.Println("IP: " + *ip)
+	fmt.Println("Start Time: " + startTime.String())
 
-	ports := make(chan int, 100)
+	ports := make(chan int, 500)
 	results := make(chan int)
 
 	var openports []int
@@ -68,9 +71,14 @@ func main() {
 	close(ports)
 	close(results)
 
-	fmt.Printf(" PORT \t STATE \n======\t=======\n")
+	fmt.Printf("\n PORT \t STATE \n======\t=======\n")
 	sort.Ints(openports)
 	for _, port := range openports {
 		fmt.Printf(" %d \t open \n", port)
 	}
+	fmt.Print("\n")
+	endTime := time.Now()
+	fmt.Println("End Time: " + endTime.String())
+	timeDiff := endTime.Sub(startTime)
+	fmt.Println("Globe took " + timeDiff.String() + " to run")
 }
