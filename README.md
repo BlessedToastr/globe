@@ -1,5 +1,5 @@
 # Globe
-Globe is a very simple port scanner built in GO
+Globe is a very simple port scanner built in GO and faster than nmap
 
 ## Coming Soon
 - Better port selection
