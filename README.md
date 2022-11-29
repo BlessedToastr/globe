@@ -1,4 +1,6 @@
 # Globe
+![globe](/images/globe.jpg?raw=true "globe")
+
 Globe is a very simple port scanner built in GO and faster than nmap
 
 ## Coming Soon
