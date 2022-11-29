@@ -1,5 +1,5 @@
 # Globe
-<a href="url"><img src="https://github.com/BlessedToastr/globe/blob/main/images/globe.jpg?raw=true" align="left" height="150" width="150" ></a>
+<a href="url"><img src="https://github.com/BlessedToastr/globe/blob/main/images/globe.png?raw=true" align="left" height="150" width="150" ></a>
 <br>
 <br>
 <br>
